@@ -1,0 +1,25 @@
+name: Test FIRE7 on FIRE7 Benchmarks
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-fire7-on-fire7-benchmarks:
+    runs-on: self-hosted
+    timeout-minutes: 7200 # for 5 days
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up FIRE7 container
+      run: docker pull asmirnov80/fire:latest
+
+    - name: Test FIRE7 on FIRE7 benchmarks 
+      run: docker run --rm -v ${{ github.workspace }}/externals:/data asmirnov80/fire:latest bash -c "cd /data/FIRE7-benchmarks && chmod +x run_FIRE7.sh && ./run_FIRE7.sh && chmod -x run_FIRE7.sh"
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      with:
+          name: fire7-test-results
+          path: externals/FIRE7-benchmarks/
