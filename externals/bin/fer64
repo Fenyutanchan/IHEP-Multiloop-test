@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run --rm --volume "$PWD":/data --workdir /data fenyutanchan/fermat:latest bash -c "fer64 $*"
