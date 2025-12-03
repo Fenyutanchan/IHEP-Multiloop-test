@@ -1,0 +1,7 @@
+# mw2 = 14/65*mt2, shat = 83/43*mt2 for eeHZ 
+replacement_list:
+  - [ "m02", "1" ] 
+
+alias_list:
+  - [ "m0^2", "m02" ]
+
