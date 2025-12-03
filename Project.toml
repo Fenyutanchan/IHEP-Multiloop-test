@@ -1,0 +1,19 @@
+name = "TestIHEPMultiloop"
+uuid = "40e361ee-e91d-4e3a-a13e-c06ae00bb63d"
+version = "0.1.0"
+authors = ["Quan-feng WU <wuquanfeng@ihep.ac.cn>"]
+
+[deps]
+FIRE = "77e5dabc-1b32-42bb-82f7-9f5473d4dc38"
+SeRA = "1d6ceff8-6ede-4257-9899-d45cadd4edda"
+
+[sources]
+FIRE = {rev = "main", url = "https://code.ihep.ac.cn/IHEP-Multiloop/FIRE.jl"}
+SeRA = {rev = "main", url = "https://code.ihep.ac.cn/IHEP-Multiloop/SeRA.jl"}
+
+[compat]
+FIRE = "0.1.0"
+SeRA = "0.1.0"
+
+[workspace]
+projects = ["test"]

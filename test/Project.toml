@@ -1,0 +1,16 @@
+[deps]
+FIRE = "77e5dabc-1b32-42bb-82f7-9f5473d4dc38"
+FeynUtils = "947500ca-7ec6-465e-ad7d-4d54f6f3e52a"
+JLD2 = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
+OrderedCollections = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
+SeRA = "1d6ceff8-6ede-4257-9899-d45cadd4edda"
+SymEngine = "123dc426-2d89-5057-bbad-38513e3affd8"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+TestIHEPMultiloop = "40e361ee-e91d-4e3a-a13e-c06ae00bb63d"
+YAML = "ddb6d928-2868-570f-bddf-ab3f9cf99eb6"
+
+[sources]
+FIRE = {rev = "main", url = "https://code.ihep.ac.cn/IHEP-Multiloop/FIRE.jl"}
+SeRA = {rev = "main", url = "https://code.ihep.ac.cn/IHEP-Multiloop/SeRA.jl"}
+TestIHEPMultiloop = {path = ".."}
