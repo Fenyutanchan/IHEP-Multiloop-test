@@ -4,4 +4,6 @@ See the [project website](https://code.ihep.ac.cn/IHEP-Multiloop) for more infor
 
 ## Task List
 
-- [ ] Testing FIRE7 in at https://gitlab.srcc.msu.ru/feynmanintegrals/fire, which also provides docker image at https://hub.docker.com/r/asmirnov80/fire.
+- [ ] Test [`FIRE7`](https://gitlab.srcc.msu.ru/feynmanintegrals/fire), which also provides the [docker image](https://hub.docker.com/r/asmirnov80/fire).
+    - [x] On `FIRE6` examples;
+    - [ ] On `FIRE7` benchmarks.
