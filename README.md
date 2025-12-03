@@ -9,4 +9,6 @@ See the [project website](https://code.ihep.ac.cn/IHEP-Multiloop) for more infor
 - [ ] Test [`SeRA.jl`](https://code.ihep.ac.cn/IHEP-Multiloop/SeRA.jl).
     - [x] Prepare `SeRA.jl` testing environment.
     - [ ] Test `SeRA.jl/test/workon_TSI/`
-        - [x] copy `externals/SeRA.jl/test/workon_TSI/` to `test/SeRA.jl_test_on_TSI/`
+        - [x] Copy `externals/SeRA.jl/test/workon_TSI/` to `test/SeRA.jl_test_on_TSI/`
+        - [ ] Fix issue: `FIRE7` gives 0 master integrals during testing `workon_TSI` of `SeRA`.
+            - Suggestion: Try `FIRE6` for comparison.
