@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run --rm --volume "$PWD":/data --workdir /data asmirnov80/fire:latest bash -c "/app/FIRE7/bin/FIRE7 $*"
