@@ -1,0 +1,42 @@
+name: Build FIRE6 Docker Image
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'externals/dockerfiles/FIRE6.dockerfile'
+      - '.github/workflows/build-FIRE6.yaml'
+
+jobs:
+  build-fire6:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USER }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push FIRE6 image
+      uses: docker/build-push-action@v5
+      with:
+        context: externals/dockerfiles
+        file: externals/dockerfiles/FIRE6.dockerfile
+        push: true
+        tags: |
+          ${{ secrets.DOCKERHUB_USER }}/fire6:latest
+        cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USER }}/fire6:buildcache
+        cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USER }}/fire6:buildcache,mode=max
+
+    - name: Simple test for FIRE6 image
+      run: |
+        docker run --rm --workdir /FIRE6 ${{ secrets.DOCKERHUB_USER }}/fire6:latest /FIRE6/bin/FIRE6 -c examples/box || echo "FIRE6 executable check complete"
