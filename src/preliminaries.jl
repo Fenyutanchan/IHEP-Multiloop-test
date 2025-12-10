@@ -10,6 +10,6 @@ function set_PATH()
     return ENV["PATH"]
 end
 
-function set_FIRE()
-    ENV["FIRE_BIN"] = joinpath(path_to_bin, "FIRE7")
+function set_FIRE(; FIRE_MAJOR_VERSION::Int=6) # default version now is 6
+    ENV["FIRE_BIN"] = joinpath(path_to_bin, "FIRE$(FIRE_MAJOR_VERSION)")
 end
