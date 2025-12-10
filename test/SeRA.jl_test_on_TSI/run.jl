@@ -1,5 +1,5 @@
 using FeynUtils
-# using FIRE
+using FIRE
 # using Dates
 # using JLD2
 using OrderedCollections
@@ -10,7 +10,7 @@ using YAML
 
 set_PATH()
 set_FIRE()
-ENV["VAC_REDUCTION_SCRIPTS_DIR"] = "$(homedir())/local/share/vac_reduction_scripts"
+ENV["VAC_REDUCTION_SCRIPTS_DIR"] = @__DIR__
 
 #--------------------------------------------------------------------
 # Two-loop Self-energy Integral (TSI)
@@ -116,7 +116,7 @@ function main()::Nothing
   for index in 1:n_ps
   write( file, """
   cd workon_TSI/fire_ieta_ps$(index)
-  julia $(seed_name).jl
+  julia --project=$((dirname∘Base.active_project)()) $(seed_name).jl
   cd ../..
 
   """ )
